@@ -1,72 +1,101 @@
-/* stylelint-disable selektor-class-pattern */
-body {
-  margin: 0;
-  font-family: Roboto, sans-serif;
-}
-
-.header {
-  /* background-color: yellow; */
-  align-items: center;
-  display: flex;
-  justify-content: space-between;
-  padding: 0 50px;
-}
-
-.logo {
-  width: 40px;
-  height: 40px;
-}
-
-.nav {
-  /* background-color: green; */
-  height: 60px;
-  line-height: 60px;
-}
-
-.nav_list {
-  display: flex;
-  list-style: none;
+*,
+*::before,
+*::after {
   margin: 0;
   padding: 0;
+  border: 0;
+  box-sizing: border-box;
 }
 
-.nav_item {
+a,
+*::before,
+*::after {
+  display: inline-block;
+}
+
+html,
+body {
+  height: 100%;
+  min-width: 320px;
+  line-height: 1;
+}
+
+a {
+  color: inherit;
   text-decoration: none;
-  font-size: 12px;
-  font-style: normal;
 }
 
-.nav__link:hover {
-  color: var(--color-blue);
+button {
+  cursor: pointer;
 }
 
-.nav_link {
-  display: block;
+li {
+  list-style: none;
+}
+
+img {
+  vertical-align: top;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-weight: inherit;
+  font-size: inherit;
+}
+
+/* --------------------------- */
+.header__content {
+  padding-right: 50px;
+  padding-left: 50px;
   text-transform: uppercase;
-  color: #000;
-  text-decoration: none;
-  margin-left: 20px;
-  font-weight: 500;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.header__menu {
+  font-family: Roboto, sans-serif;
+  font-size: 12px;
+}
+
+.menu__iteam {
+  display: flex;
+}
+
+.menu__list {
+  padding-right: 20px;
+}
+
+.menu__list:last-child {
+  padding-right: 0;
+}
+
+.menu__link {
+  display: flex;
+  position: relative;
+  align-items: center;
+  height: 60px;
+}
+
+.menu__link[data-qa='hover']:hover {
+  color: #00acdc;
+}
+
+.menu__link.is-active::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  height: 4px;
+  border-radius: 8px;
+  background-color: #00acdc;
 }
 
 .is-active {
-  position: relative;
   color: #00acdc;
-  margin: 0;
-}
-
-[data-qa] {
-  color: #00acdc;
-}
-
-.is-active::after {
-  content: '';
-  width: 100%;
-  height: 4px;
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  display: block;
-  background: #00acdc;
-  border-radius: 8px;
 }
