@@ -81,7 +81,7 @@ h6 {
   height: 60px;
 }
 
-.menu__link[data-qa='hover']:hover {
+.menu__link:hover {
   color: #00acdc;
 }
 
